@@ -1,4 +1,4 @@
-import Nike from "../img/Nike.jpg";
+import Nike from "../assets/img/Nike.jpg";
 
 export const CartWidget = () => {
     return (
