@@ -1,7 +1,5 @@
-.header-navbar{
-    margin-left: 1%;
-    margin-right: 1%;
-    margin-top: 1%;
+header{
+    width: 100%;
     min-height: 100px;
     max-width:1530px;
     overflow: hidden;
@@ -12,32 +10,30 @@
     box-sizing: border-box ;
     background-color: white;
     box-shadow:  1px 0 10px 10px #8f155850;
-  }
-  a{      
+}
+a{      
     color: black;
     text-decoration: none;
     text-transform: uppercase;
-    font-family: cursive;
-  }
-  a:hover{
+}
+a:hover{
     color: #8f155850;
-  }
-  .menu{
+}
+.menu{
     display: none;
-  }
-  li{
+}
+li{
     list-style: none;
-  }
-  
-  .header-navbar ul{
+}
+
+header ul{
     display: flex;
     padding: 0;
     margin: 0;
-  }
-  .header-navbar ul li{
+}
+header ul li{
     padding: 0 1rem;
-  }
-  .header-navbar ul li a{
+}
+header ul li a{
     font-weight: bold;
-  }
-  
+}

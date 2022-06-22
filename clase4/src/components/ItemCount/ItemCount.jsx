@@ -1,29 +1,37 @@
-import React,{useState} from 'react';
+import { useState } from 'react'
 
+function ItemCount({stock, initial}) {
+    const [ count, setCount ] = useState(initial)
 
-export const ItemCount = ({initial,stock, onAdd}) => {
-
-    const [count, setCount] = useState (initial);
-
-    const aumentar = () => {
-        setCount (count + 1);
+    function suma() {
+      if (count < stock) {
+        setCount(count + 1)
+      }else{
+        alert('Stock superado')
+      }
     }
 
-    const disminuir = () => {
-        setCount (count - 1);
+    function resta() {
+      if (count > initial) {
+        setCount(count - 1)
+      }
     }
 
-    return (
-        <div className='counter'>
-            <button disabled={count <= 1} onClick={disminuir}>-</button>
-            <span>{count}</span>
-            <button disabled={count >= stock } onClick={aumentar}>+</button>
-            <div>
-                <button disabled={stock <= 0} onClick={()=>onAdd(count)}>Agregar al carrito</button>
-            </div>
-        </div>
-    );
+  return (
+    <>
+    <div>
+      <div className="d-flex card justify-content-center align-items-center flex-row m-2 p-2">
+      <button className="m-1 p-2 btn btn-danger" onClick={resta}>-</button>
+        <span className="m-1" >{count}</span>
+        <button className="m-1 p-2 btn btn-success" onClick={suma}>+</button>
+      </div>
     
-}
+        <div>
+        <button className="btn btn-primary">Agregar al Carrito</button>
+        </div>
 
-export default ItemCount;
+    </div>
+    </>
+  )
+}
+export default ItemCount

@@ -1,6 +1,9 @@
 import React from "react";
-import "./css/NavBar.css"
-import {CartWidget} from "./CartWidget.jsx";
+import "./style.css"
+import {CartWidget} from "../CartWidget/CartWidget";
+import { Link } from 'react-router-dom';
+import 'boxicons';
+
 export const NavBar = () => {
 
   return (
@@ -8,13 +11,13 @@ export const NavBar = () => {
       <CartWidget />
       <ul>
         <li>
-          <a href="#">Inicio</a>
+          <Link to="/">Inicio</Link>
         </li>
         <li>
-           <a href="#">Productos</a>
+          <Link to="/productos">Productos</Link>
         </li>
       </ul>
-      <div className="carro">
+      <div>
         <box-icon name='cart-add'></box-icon>
       </div>
     </header>

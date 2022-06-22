@@ -1,15 +1,36 @@
-import React from 'react'
-import { NavBar } from "./components/NavBar";
-import {ItemListContainer} from './components/ItemListContainer';
-import "boxicons";
-
-
-function App() {
-
+import  React  from "react";
+import {NavBar} from './components/NavBar/NavBar';
+import './App.css';
+import ItemListContainer from './components/itemListContainer/ItemListContainer';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailConteiner';
+import {BrowserRouter, Route, Routes} from 'react-router-dom'
+import Inicio from "./components/inicio/index"
+function App( id ) {
   return (
-    <div>
-      <NavBar />
-      <ItemListContainer title="Zapatillas" description="Las mejores de la zona"/>
+    <div className="App">
+      <BrowserRouter>
+      <NavBar key={id}/>
+      <Routes>
+      
+      <Route path="/" element={
+        <Inicio/>
+      } />
+      
+        
+      <Route path="/productos" element={
+        <ItemListContainer/>
+      } />
+      
+      <Route path="/category/:categoryId" element={
+        <ItemListContainer title="Categoria" />
+      } />
+      
+     
+       <Route path="/item/:id" element={
+        <ItemDetailContainer title="Detalle"/>
+      } />
+      </Routes>
+      </BrowserRouter>
     </div>
   );
 }

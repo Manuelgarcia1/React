@@ -1,10 +1,11 @@
 import React from 'react'
 import Item from '../Item/Item'
-
+import "./style.css"
 
 export const ItemList = ({items}) => {
   return (
-    <div>
+    <>
+    <div className="productos"  >
         {
             items.map((item) =>( 
             <Item key={item.id} {...item}/>
@@ -13,5 +14,6 @@ export const ItemList = ({items}) => {
         };
         
     </div>
+    </>
   );
 };
