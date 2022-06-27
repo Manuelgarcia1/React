@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-function ItemCount({stock, initial}) {
+function ItemCount({stock, initial, onAdd}) {
     const [ count, setCount ] = useState(initial)
 
     function suma() {
@@ -20,14 +20,14 @@ function ItemCount({stock, initial}) {
   return (
     <>
     <div>
-      <div className="d-flex card justify-content-center align-items-center flex-row m-2 p-2">
-      <button className="m-1 p-2 btn btn-danger" onClick={resta}>-</button>
+      <div>
+      <button onClick={resta}>-</button>
         <span className="m-1" >{count}</span>
-        <button className="m-1 p-2 btn btn-success" onClick={suma}>+</button>
+        <button onClick={suma}>+</button>
       </div>
     
         <div>
-        <button className="btn btn-primary">Agregar al Carrito</button>
+        <button onClick={()=>onAdd(count)}>Agregar al Carrito</button>
         </div>
 
     </div>

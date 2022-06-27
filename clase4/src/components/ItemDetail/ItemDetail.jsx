@@ -1,9 +1,17 @@
 import React from 'react'
 import ItemCount from '../ItemCount/ItemCount'
-//import img from '../../images/img01.jpg'
+import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./style.css"
 
 export const ItemDetail = ({item}) => {
+  const [cant, setCant] = useState(0);
+
+  const onAdd = (cantidad) =>{
+
+    setCant(cantidad);
+    
+  }
   return (
     <>
     <div className="product-details">
@@ -11,7 +19,10 @@ export const ItemDetail = ({item}) => {
         <h1>{item.name}</h1>
         <p>${item.price}</p>
         <p>{item.description}</p>
-        <ItemCount stock={12} initial={1} />
+        { (cant === 0)
+          ?<ItemCount onAdd={onAdd} stock={12} initial={1} />
+          :<Link to="/cart">Ir al Carrito</Link>
+        }
         
     </div>
     </>
